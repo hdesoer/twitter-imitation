@@ -10,7 +10,7 @@ type Props = {
 const Layout: React.FC<Props> = ({ children }) => {
   const currentUser = useAppSelector(state => state.users.currentUser)
   if (!currentUser) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/" replace />
   }
   return <>
     <Header firstName={currentUser.firstName} />
