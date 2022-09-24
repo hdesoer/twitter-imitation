@@ -1,10 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
 
 import counterReducer from '@/states/counterSlice'
+import usersReducer from '@/states/usersSlice'
+import tweetsReducer from './states/tweetsSlice'
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
+    users: usersReducer,
+    tweets: tweetsReducer,
   }
 })
 

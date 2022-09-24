@@ -1,0 +1,17 @@
+.formContainer {
+  max-width: 400px; 
+  margin: 0 auto;
+
+  .formItem {
+    margin-bottom: 20px;
+
+    .formLabel {
+      float: left;
+    }
+  }
+
+  .changeActionBtn {
+    margin-top: 15px;
+    float: right;
+  }
+}

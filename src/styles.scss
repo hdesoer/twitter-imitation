@@ -1,2 +1,7 @@
 // Import all of Bootstrap's CSS
 @import "~bootstrap/scss/bootstrap";
+
+.form-text {
+  text-align: left;
+  color: var(--bs-danger);
+}
