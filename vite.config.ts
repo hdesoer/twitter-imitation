@@ -14,4 +14,8 @@ export default defineConfig({
       { find: '~bootstrap', replacement: path.resolve(__dirname, 'node_modules/bootstrap') }
     ],
   },
+  build: {
+    // debug
+    // minify: false
+  }
 })

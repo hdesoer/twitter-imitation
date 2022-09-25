@@ -1,6 +1,8 @@
+import type { User } from './User'
 export interface Tweet {
   id: number
   text: string
   createdAt: string
-  userId: number
+  user: User
+  isDeleted?: boolean
 }

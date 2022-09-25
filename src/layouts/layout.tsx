@@ -12,10 +12,12 @@ const Layout: React.FC<Props> = ({ children }) => {
   if (!currentUser) {
     return <Navigate to="/" replace />
   }
-  return <>
+  return <div className="vw-100 vh-100 d-flex flex-column">
     <Header firstName={currentUser.firstName} />
-    { children }
-  </>
+    <div style={{ minHeight: 'calc(100vh - 56px)', overflowY: 'scroll' }}>
+      { children }
+    </div>
+  </div>
 }
 
 export default Layout

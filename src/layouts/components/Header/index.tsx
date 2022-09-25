@@ -16,9 +16,9 @@ const Header = ({ firstName }: { firstName: string }) => {
   return <nav  className="navbar bg-light">
     <div  className="container-fluid">
       <a  className="navbar-brand">Twitter</a>
-      <div className='d-flex'>
+      <div className='d-flex align-items-center'>
         <span className="navbar-text me-2">{ firstName }</span>
-        <button className="btn btn-outline-primary" onClick={onLogout}>Logout</button>
+        <button className="btn btn-outline-primary btn-sm" onClick={onLogout}>Logout</button>
       </div>
     </div>
   </nav>

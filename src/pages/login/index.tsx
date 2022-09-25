@@ -1,11 +1,9 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import classNames from 'classnames'
 import { Form, redirect, useActionData } from 'react-router-dom'
 
 import { addUser, loginUser, getAllUsers } from '@/states/usersSlice'
 import { store } from '@/store' 
-import s from './index.module.scss'
 
 const LoginPage = () => {
   const [isLogin, setIsLogin] = useState(true)
@@ -27,9 +25,11 @@ const LoginPage = () => {
     setIsLogin(!isLogin)
   }
 
-  return <div className={s.formContainer}>
-    <Form method="post">
-      <h1 className="h3 mb-3 fw-normal">Please {isLogin?'sign in':'sign up'}</h1>
+  return <div 
+    className="vw-100 vh-100 d-flex justify-content-center"
+  >
+    <Form method="post" style={{ width: '400px', marginTop: '15vh' }}>
+      <h1 className="h3 mb-4 fw-normal">Please {isLogin?'sign in':'sign up'}</h1>
 
       {
         errors?.alert && <div className="alert alert-danger alert-dismissible fade show" role="alert">
@@ -37,10 +37,10 @@ const LoginPage = () => {
         </div>
       }
 
-      <div className={classNames(s.formItem)}>
+      <div className="mb-3">
         <label 
           htmlFor="username" 
-          className={classNames('form-label', s.formLabel)}
+          className="form-label"
         >
         Username
         </label>
@@ -51,10 +51,10 @@ const LoginPage = () => {
       </div>
       {
         !isLogin && (
-          <div className={classNames(s.formItem)}>
+          <div className="mb-3">
             <label 
               htmlFor="firstName" 
-              className={classNames('form-label', s.formLabel)}
+              className="form-label"
             >
             First Name
             </label>
@@ -65,27 +65,27 @@ const LoginPage = () => {
           </div>
         )
       }
-      <div className={classNames(s.formItem)}>
+      <div className="mb-3">
         <label 
           htmlFor="password" 
-          className={classNames('form-label', s.formLabel)}
+          className="form-label"
         >
         Password
         </label>
-        <input name='password' className="form-control form-control-lg" id="password" placeholder="Password" />
+        <input type='password' name='password' className="form-control form-control-lg" id="password" placeholder="Password" />
         {
           errors?.password && <div className="form-text">{errors?.password}</div>
         }
       </div>
 
       <button 
-        className="w-100 btn btn-lg btn-primary"
+        className="w-100 btn btn-lg mt-2 btn-primary"
         type='submit'
       >
       Submit
       </button>
       <button 
-        className={classNames('btn btn-link', s.changeActionBtn)}
+        className="btn btn-link float-end mt-1"
         onClick={onChangeAction}
       >
         { isLogin?'Sign up':'Sign in' }

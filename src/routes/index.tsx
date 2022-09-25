@@ -5,7 +5,10 @@ import {
 
 import LoginPage, { loginAction } from '@/pages/login'
 import HomePage from '@/pages/home'
+import TweetDetailPage from '@/pages/tweet'
 import AuthRequiredLayout from '@/layouts/layout'
+
+import { fakeGetTweetById } from '@/services/tweet'
 
 const router = createBrowserRouter([
   {
@@ -19,6 +22,15 @@ const router = createBrowserRouter([
       <HomePage />
     </AuthRequiredLayout>,
   },
+  {
+    path: 'tweet/:tweetId',
+    element: <AuthRequiredLayout>
+      <TweetDetailPage />
+    </AuthRequiredLayout>,
+    loader: ({ params }) => {
+      return fakeGetTweetById(Number(params.tweetId))
+    }
+  }
 ])
 
 export default router
